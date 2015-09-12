@@ -1,18 +1,24 @@
-app = angular.module 'app',
+angular.module 'app',
   [
     'ngAnimate'
+    'ngMaterial'
     'pascalprecht.translate'
     'ui.router'
-    'ui.bootstrap'
     'templates'
 
-    'app.home'
-    'app.faq'
-    'app.blog'
+    'app.sections'
   ]
 
 
-app.config ($translateProvider) ->
+.config ($translateProvider, $stateProvider, $urlRouterProvider) ->
+
+  $urlRouterProvider.otherwise '/'
+
+  $stateProvider
+  .state 'app',
+    abstract: true
+    templateUrl: 'layout.html'
+
   $translateProvider
     .registerAvailableLanguageKeys ['de', 'en'], languageKeys
     .useStaticFilesLoader
@@ -27,10 +33,8 @@ app.config ($translateProvider) ->
     'en_UK': 'en'
     'de_DE': 'de'
     'de_CH': 'de'
-    'de_AT': 'de'
 
 
-app.controller 'HeaderController', ($scope) ->
 
 
 

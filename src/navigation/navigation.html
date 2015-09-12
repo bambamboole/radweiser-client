@@ -1,0 +1,13 @@
+<div class="nav-btn">
+  <i ng-click="nav.isMenuOpen = !nav.isMenuOpen"
+     ng-class="nav.isMenuOpen ? 'fa-times' : 'fa-bars'"
+     class="btn-menu fa fa-3x"></i><img src="assets/images/logo-invert.png" alt="radweiser">
+</div>
+
+<div ng-show="nav.isMenuOpen" class="nav-overlay nav-animate">
+  <ul>
+    <li><a ng-click="nav.close()" ui-sref="app.home">{{ 'menu.home' | translate }}</a></li>
+    <li><a ng-click="nav.close()" ui-sref="app.faq">{{ 'menu.faq' | translate }}</a></li>
+    <li><a ng-click="nav.close()" ui-sref="app.blog">{{ 'menu.blog' | translate }}</a></li>
+  </ul>
+</div>

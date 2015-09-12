@@ -1,15 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../bower_components/angular-material/angular-material.scss";
 @import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 
 $first-color: #2ac211;
 
-@import "modules/home/home";
-@import "modules/header/header";
-@import "modules/navigation/navigation";
-@import "modules/footer/footer";
-
+@import "navigation/navigation";
+@import "sections/blog/blog";
+@import "sections/faq/faq";
+@import "sections/home/home";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -17,10 +16,29 @@ body {
   min-height: 2000px;
 }
 
-h1{
+h1 {
   color: $first-color;
   text-align: center;
   font-size: 3em;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+
+header {
+  @include linear-gradient(#4ea642, #2ac211);
+
+  div.logo-wrapper {
+    padding: 5% 0 5% 0;
+    img.logo {
+      display: block;
+      margin: auto;
+      max-width: 50%;
+    }
+  }
+
+}
+
+footer {
+  background: $first-color;
+}
+

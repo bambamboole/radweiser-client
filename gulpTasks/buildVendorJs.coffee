@@ -6,8 +6,10 @@ module.exports = (gulp, plugins) ->
     'bower_components/angular-translate/angular-translate.js'
     'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js'
     'bower_components/angular-ui-router/release/angular-ui-router.js'
-    'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+    'bower_components/angular-material/angular-material.js'
+    'bower_components/angular-aria/angular-aria.js'
   ]
+
   ->
     gulp.src vendorJsFiles
     .pipe plugins.concat 'vendor.js'
