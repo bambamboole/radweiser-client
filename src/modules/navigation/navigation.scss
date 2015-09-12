@@ -1,0 +1,125 @@
+.navigation {
+  div.nav-btn {
+    padding: 5px;
+    z-index: 10;
+    height: 62px;
+    position: fixed;
+    top: 1em;
+    background: #ffffff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    i.btn-menu {
+      color: $first-color;
+    }
+    img {
+      display: inline-block;
+      height: 78%;
+      vertical-align: baseline;
+      padding: 10px 0 0 0;
+      margin: 0 10px;
+    }
+  }
+  div.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    padding-top: 100px;
+
+    ul {
+      padding: 0;
+      list-style: none;
+      li {
+        a {
+          cursor: pointer;
+          width: 8em;
+          font-size: 2em;
+          display: block;
+          font-weight: bold;
+          text-align: center;
+          margin: 0 0 20px 0;
+          color: $first-color;
+        }
+      }
+      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+        li:first-child{
+          border-top: 1px solid $first-color;
+          margin-top: -20px;
+        }
+        li {
+          a {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-animate.ng-hide-add {
+    -webkit-animation: 0.5s hide;
+    animation: 0.5s hide;
+  }
+
+  @keyframes hide {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+
+  @-webkit-keyframes hide {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+
+  .nav-animate.ng-hide-remove {
+    -webkit-animation: 0.3s show;
+    animation: 0.3s show;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    70% {
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @-webkit-keyframes show {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    70% {
+      transform: scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

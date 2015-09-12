@@ -1,0 +1,24 @@
+{
+  "name": "radweiser-client",
+  "version": "0.0.1",
+  "description": "frontend of radweiser.de",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "coffee-script": "^1.9.3",
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.7.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.6",
+    "run-sequence": "^1.1.2"
+  }
+}

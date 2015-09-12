@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+
+$first-color: #2ac211;
+
+@import "modules/home/home";
+@import "modules/header/header";
+@import "modules/navigation/navigation";
+@import "modules/footer/footer";
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  min-height: 2000px;
+}
+
+h1{
+  color: $first-color;
+  text-align: center;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}

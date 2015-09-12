@@ -1,0 +1,14 @@
+header {
+  @include linear-gradient(#4ea642, #2ac211);
+
+  div.logo-wrapper {
+    padding: 5% 0 5% 0;
+    img.logo {
+      display: block;
+      margin: auto;
+      max-width: 50%;
+    }
+  }
+
+}
+

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Radweiser.de</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script src="http://localhost:35729/livereload.js"></script>
+
+</head>
+<body ng-app="app">
+<div class="navigation" ng-controller="NavigationController as nav"
+     ng-include="'modules/navigation/navigation.html'"></div>
+<header ng-include="'modules/header/header.html'"></header>
+<div ui-view>
+
+</div>
+<footer ng-include="'modules/footer/footer.html'"></footer>
+<script src="assets/js/vendor.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/templates.js"></script>
+</body>
+</html>
