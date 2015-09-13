@@ -27,7 +27,7 @@ angular.module 'app.login', []
     auth.login(credentials)
 
   @getUsers = ->
-    $http.get 'http://localhost:2342/api/users'
+    $http.get '/api/users'
     .then (response) ->
       console.log response.data
 

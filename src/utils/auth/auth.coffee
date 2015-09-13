@@ -5,7 +5,7 @@ angular.module "app.utils.auth", []
   refreshToken: ->
     console.log 'uservalid', @userHasValidToken()
     return if not @userHasValidToken()
-    $http.get 'http://localhost:2342/api/refresh-token'
+    $http.get '/api/refresh-token'
     .then (response) =>
 
       @_saveToken response.data
@@ -14,7 +14,7 @@ angular.module "app.utils.auth", []
       console.log error
 
   login: (credentials) ->
-    $http.post 'http://localhost:2342/login', credentials
+    $http.post '/login', credentials
     .then (response) =>
 
       @_saveToken response.data
