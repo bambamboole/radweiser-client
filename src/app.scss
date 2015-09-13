@@ -24,7 +24,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-header {
+div.header {
   @include linear-gradient(#4ea642, #2ac211);
 
   div.logo-wrapper {
@@ -38,7 +38,7 @@ header {
 
 }
 
-footer {
+div.footer {
   background: $first-color;
 }
 

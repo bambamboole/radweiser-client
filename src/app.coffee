@@ -1,16 +1,18 @@
 angular.module 'app',
   [
     'ngAnimate'
+    'ngStorage'
     'ngMaterial'
     'pascalprecht.translate'
     'ui.router'
     'templates'
 
+    'app.utils'
     'app.sections'
   ]
 
 
-.config ($translateProvider, $stateProvider, $urlRouterProvider) ->
+.config ($translateProvider, $stateProvider, $urlRouterProvider, $httpProvider) ->
 
   $urlRouterProvider.otherwise '/'
 
@@ -34,7 +36,10 @@ angular.module 'app',
     'de_DE': 'de'
     'de_CH': 'de'
 
+  $httpProvider.interceptors.push 'authInterceptor'
+
+  $httpProvider.defaults.useXDomain = true
+  delete $httpProvider.defaults.headers.common['X-Requested-With']
 
 
-
-
+.constant 'API', 'http://localhost:2342/api'

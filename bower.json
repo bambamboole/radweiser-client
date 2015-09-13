@@ -15,6 +15,7 @@
     "angular-translate-loader-static-files": "~2.7.2",
     "angular-ui-router": "ui-router#~0.2.15",
     "bourbon": "~4.2.4",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "ngstorage": "~0.3.9"
   }
 }

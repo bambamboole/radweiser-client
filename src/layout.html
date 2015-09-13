@@ -1,10 +1,12 @@
-<header>
-<rw-navigation class="navigation"></rw-navigation>
-  <div class="logo-wrapper">
-    <img class="logo" src="assets/images/rw-logo.png" alt="radweiser">
+<section layout="column">
+  <rw-navigation class="navigation"></rw-navigation>
+  <div class="header" layout="row">
+    <div class="logo-wrapper">
+      <img class="logo" src="assets/images/rw-logo.png" alt="radweiser">
+    </div>
   </div>
-</header>
-<ui-view></ui-view>
-<footer>
-  <p>footer</p>
-</footer>
+  <div layout="row" ui-view=""></div>
+  <div class="footer" layout="row">
+    <p>footer</p>
+  </div>
+</section>

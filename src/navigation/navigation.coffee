@@ -7,11 +7,14 @@ angular.module "app"
   controllerAs: "nav"
 
 
-.controller "NavigationController", ->
-  nav = this
-  nav.isMenuOpen = false
+.controller "NavigationController", ($mdSidenav) ->
+  @close = ->
+    $mdSidenav("left").close()
+    .then ->
+      console.log 'nav zu!'
 
-  nav.close = ->
-    nav.isMenuOpen = false
+  @toggle = ->
+    $mdSidenav("left").toggle()
 
-  return nav
+
+  return @
