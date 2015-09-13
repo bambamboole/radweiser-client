@@ -1,20 +1,7 @@
-angular.module "app"
+angular.module "app.navigation", []
 
-.directive "rwNavigation", ->
-  restrict: "E"
-  templateUrl: "navigation/navigation.html"
-  controller: "NavigationController"
-  controllerAs: "nav"
+.controller "NavigationController", ($scope) ->
 
 
-.controller "NavigationController", ($mdSidenav) ->
-  @close = ->
-    $mdSidenav("left").close()
-    .then ->
-      console.log 'nav zu!'
-
-  @toggle = ->
-    $mdSidenav("left").toggle()
 
 
-  return @

@@ -1,12 +1,117 @@
-<section layout="column">
-  <rw-navigation class="navigation"></rw-navigation>
-  <div class="header" layout="row">
-    <div class="logo-wrapper">
-      <img class="logo" src="assets/images/rw-logo.png" alt="radweiser">
+<div class="background">
+  <div class="content" layout="column">
+
+
+    <div id="newsletter-container" ng-if="nav.showNewsletter" class="animate-if">
+      <form name="MailchimpSubscriptionForm" ng-controller="MailchimpSubscriptionCtrl">
+        <div ng-hide="mailchimp.result === 'success'">
+          <div layout="row">
+            <md-input-container flex="50">
+              <label>First name</label>
+              <input type="text" name="fname" ng-model="mailchimp.FNAME">
+            </md-input-container>
+            <md-input-container flex="50">
+              <label>Last name</label>
+              <input type="text" name="lname" ng-model="mailchimp.LNAME">
+            </md-input-container>
+          </div>
+          <input class="hidden" type="hidden" ng-model="mailchimp.username" ng-init="mailchimp.username='radweiser'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.dc" ng-init="mailchimp.dc='us11'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.u" ng-init="mailchimp.u='805a3b9048f6ae0dcdbaa7259'">
+          <input class="hidden" type="hidden" ng-model="mailchimp.id" ng-init="mailchimp.id='aef271a104'">
+
+          <div layout="row">
+            <md-input-container flex="90">
+              <label>Email address</label>
+              <input type="email" name="email" ng-model="mailchimp.EMAIL" placeholder="Email address" required>
+            </md-input-container>
+            <div flex="10">
+              <md-button class="md-raised newsletter-btn" ng-disabled="MailchimpSubscriptionForm.$invalid"
+                         ng-click="addSubscription(mailchimp)">Join
+              </md-button>
+
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- Show error message if MailChimp unsuccessfully added the email to the list. -->
+        <div layout="row" layout-align="center center" ng-show="mailchimp.result === 'error'" ng-cloak>
+          <p ng-bind-html="mailchimp.errorMessage"></p>
+        </div>
+
+        <!-- Show success message if MailChimp returned successfully. -->
+        <div layout="row" layout-align="center center" ng-show="mailchimp.result === 'success'" ng-cloak>
+          <p ng-bind-html="mailchimp.successMessage"></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="top-bar">
+      <div class="pull-left">
+        <p ng-click="nav.showNewsletter = !nav.showNewsletter">Subscribe Newsletter</p>
+      </div>
+      <div class="pull-right">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-pinterest-p"></i>
+        <i class="fa fa-google-plus"></i>
+      </div>
+    </div>
+    <div class="header" layout="row">
+      <div class="MenuContainer">
+        <input id="menu" type="checkbox" name="menu" class="HiddenCheckbox"/>
+        <label for="menu" class="MenuIcon"></label>
+        <nav class="Menu">
+          <ul class="Menu-list">
+            <li class="Menu-item"><a ui-sref="app.home" data-subtitle="Hier fängts an" class="Menu-link">{{'menu.home' | translate}}</a></li>
+            <li class="Menu-item"><a ui-sref="app.blog" data-subtitle="Mehr über uns" class="Menu-link">{{'menu.blog' | translate}}</a></li>
+            <li class="Menu-item"><a ui-sref="app.faq" data-subtitle="Noch Fragen?" class="Menu-link">{{'menu.faq' | translate}}</a></li>
+            <li class="Menu-item"><a ui-sref="app.contact" data-subtitle="auch für Händler" class="Menu-link">{{'menu.contact' | translate}}</a></li>
+            <li class="Menu-item"><a ui-sref="app.login" data-subtitle="Hier wirds persönlich"
+                                     class="Menu-link">{{'menu.login' | translate}}</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+    <div layout="row" ui-view=""></div>
+    <div class="footer" layout="row">
+      <p>&copy; 2015 {{'footer.copyright' | translate}}</p>
     </div>
   </div>
-  <div layout="row" ui-view=""></div>
-  <div class="footer" layout="row">
-    <p>footer</p>
-  </div>
-</section>
+</div>
+
+
+<!-- Begin MailChimp Signup Form -->
+<!--<div id="mc_embed_signup">-->
+<!--<form action="//radweiser.us11.list-manage.com/subscribe/post?u=805a3b9048f6ae0dcdbaa7259&amp;id=aef271a104" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>-->
+<!--<div id="mc_embed_signup_scroll">-->
+<!--<h2>Subscribe to our mailing list</h2>-->
+<!--<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>-->
+<!--<div class="mc-field-group">-->
+<!--<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>-->
+<!--</label>-->
+<!--<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">-->
+<!--</div>-->
+<!--<div class="mc-field-group">-->
+<!--<label for="mce-FNAME">First Name </label>-->
+<!--<input type="text" value="" name="FNAME" class="" id="mce-FNAME">-->
+<!--</div>-->
+<!--<div class="mc-field-group">-->
+<!--<label for="mce-LNAME">Last Name </label>-->
+<!--<input type="text" value="" name="LNAME" class="" id="mce-LNAME">-->
+<!--</div>-->
+<!--<div id="mce-responses" class="clear">-->
+<!--<div class="response" id="mce-error-response" style="display:none"></div>-->
+<!--<div class="response" id="mce-success-response" style="display:none"></div>-->
+<!--</div>    &lt;!&ndash; real people should not fill this in and expect good things - do not remove this or risk form bot signups&ndash;&gt;-->
+<!--<div style="position: absolute; left: -5000px;"><input type="text" name="b_805a3b9048f6ae0dcdbaa7259_aef271a104" tabindex="-1" value=""></div>-->
+<!--<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>-->
+<!--</div>-->
+<!--</form>-->
+<!--</div>-->
+
+<!--End mc_embed_signup-->

@@ -3,4 +3,5 @@ angular.module 'app.sections', [
   'app.faq'
   'app.blog'
   'app.login'
+  'app.contact'
 ]

@@ -1,0 +1,62 @@
+<section class="contact">
+
+  <h1>{{ 'contact.title' | translate }}</h1>
+  <md-content layout-padding class="contact-form">
+    <form name="contactForm" id="contact-form">
+      <md-input-container flex>
+        <label>{{ 'contact.form.name' | translate }}</label>
+        <input ng-model="contact.name">
+      </md-input-container>
+      <md-input-container flex>
+        <label>{{ 'contact.form.email' | translate }}</label>
+        <input type="email" ng-model="contact.email">
+      </md-input-container>
+
+      <div layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-click="showOptional = !showOptional" class="md-raised">{{ 'contact.form.company.button' |
+          translate }}
+        </md-button>
+      </div>
+      <div ng-show="showOptional" layout="column">
+        <div layout="row">
+          <md-input-container flex="100">
+            <label>{{ 'contact.form.company.name' | translate }}</label>
+            <input type="email" ng-model="contact.company.name">
+          </md-input-container>
+        </div>
+        <div layout="row">
+          <md-input-container flex="100">
+            <label>{{ 'contact.form.company.phone' | translate }}</label>
+            <input type="email" ng-model="contact.company.phone">
+          </md-input-container>
+        </div>
+        <div layout="row">
+
+          <md-input-container flex="30">
+            <label>{{ 'contact.form.company.address' | translate }}</label>
+            <input ng-model="contact.company.address">
+          </md-input-container>
+          <md-input-container flex="30">
+            <label>{{ 'contact.form.company.zip' | translate }}</label>
+            <input ng-model="contact.company.zip">
+          </md-input-container>
+          <md-input-container flex="40">
+            <label>{{ 'contact.form.company.city' | translate }}</label>
+            <input ng-model="contact.company.city">
+          </md-input-container>
+        </div>
+      </div>
+
+      <md-input-container flex>
+        <label>{{ 'contact.form.message' | translate }}</label>
+        <textarea ng-model="contact.message" columns="2" md-maxlength="350"></textarea>
+      </md-input-container>
+
+      <div layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button type="submit" class="md-raised">{{ 'contact.form.submit.button' |
+          translate }}
+        </md-button>
+      </div>
+    </form>
+  </md-content>
+</section>

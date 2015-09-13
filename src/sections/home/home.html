@@ -1,5 +1,50 @@
 <section class="home">
 
-  <h1>{{ home.title }}</h1>
-svhjdkasvdukauzv
+  <h1>{{ 'home.soonOnline' | translate }}</h1>
+  <div class="news" layout="row" layout-align="space-around center">
+
+    <div>
+      <md-card>
+        <img ng-src="{{ 'home.cardOne.imagePath' | translate }}" class="md-card-image" alt="Washed Out">
+        <md-card-content>
+          <h2 class="md-title">{{ 'home.cardOne.title' | translate }}</h2>
+          <p>
+            {{ 'home.cardOne.content' | translate }}
+          </p>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button>{{ 'home.cardOne.button' | translate }}</md-button>
+        </div>
+      </md-card>
+    </div>
+    <div>
+      <md-card>
+        <img ng-src="{{ 'home.cardTwo.imagePath' | translate }}" class="md-card-image" alt="Washed Out">
+        <md-card-content>
+          <h2 class="md-title">{{ 'home.cardTwo.title' | translate }}</h2>
+          <p>
+            {{ 'home.cardTwo.content' | translate }}
+          </p>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button>{{ 'home.cardTwo.button' | translate }}</md-button>
+        </div>
+      </md-card>
+    </div>
+    <div>
+      <md-card>
+        <img ng-src="{{ 'home.cardThree.imagePath' | translate }}" class="md-card-image" alt="Washed Out">
+        <md-card-content>
+          <h2 class="md-title">{{ 'home.cardThree.title' | translate }}</h2>
+          <p>
+            {{ 'home.cardThree.content' | translate }}
+          </p>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+          <md-button>{{ 'home.cardThree.button' | translate }}</md-button>
+        </div>
+      </md-card>
+    </div>
+  </div>
+
 </section>

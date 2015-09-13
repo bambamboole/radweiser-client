@@ -1,3 +1,10 @@
-section.login{
-
+section.login {
+  width: 100%;
+  background: $first-color;
+  color: white;
+  .login-form{
+    padding: 30px 50px 10px 10px;
+    background: #F6EFE8;
+    color: $first-color;
+  }
 }

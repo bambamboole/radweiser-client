@@ -34,6 +34,9 @@ angular.module 'app.login', []
   @logout = ->
     auth.logout()
 
+  @getCurrentUser = ->
+    console.log auth.currentUser.user
+
   $scope.$watch ->
     auth.isLoggedIn()
   , (newVal, oldVal) =>

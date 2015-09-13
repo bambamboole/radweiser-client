@@ -11,6 +11,7 @@ angular.module 'app.home', []
 
 
 .controller 'HomeController', ->
-  @title = 'Home'
+  @title = 'Wir gehen bald online!'
+
 
   return @

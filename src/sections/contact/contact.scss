@@ -1,10 +1,14 @@
-section.home {
+section.contact {
   width: 100%;
   background: $first-color;
   color: white;
-  div.news{
+  .contact-form{
     background: #F6EFE8;
-    padding: 30px 0;
     color: $first-color;
+  }
+  #contact-form{
+    margin: 0 auto;
+    width: 80%;
+    color: black;
   }
 }

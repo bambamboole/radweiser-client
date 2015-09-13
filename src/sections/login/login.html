@@ -1,21 +1,28 @@
 <section class="login">
 
   <h1>{{ login.title }}</h1>
-<form ng-hide="login.isLoggedIn" ng-submit="login.submit()">
-  <md-input-container>
-    <label>username</label>
-    <input ng-model="login.username">
-  </md-input-container>
-  <md-input-container>
-    <label>password</label>
-    <input ng-model="login.password" type="password">
-  </md-input-container>
-  <md-button type="submit" class="md-raised">Button</md-button>
-</form>
-  <md-button ng-click="login.getUsers()" class="md-raised">users</md-button>
 
-  <md-button ng-click="login.logout()" class="md-raised">logout</md-button>
-  <md-button ui-sref="app.home" class="md-raised">home</md-button>
+  <div class="login-form" layout="row">
+    <form ng-hide="login.isLoggedIn" ng-submit="login.submit()" flex="100">
+      <md-input-container>
+        <label>username</label>
+        <input ng-model="login.username">
+      </md-input-container>
+      <md-input-container>
+        <label>password</label>
+        <input ng-model="login.password" type="password">
+      </md-input-container>
+      <md-button type="submit" class="md-raised">Button</md-button>
+    </form>
 
 
+
+  </div>
+  <div layout="row">
+    <md-button ng-click="login.getUsers()" class="md-raised">users</md-button>
+
+    <md-button ng-click="login.logout()" class="md-raised">logout</md-button>
+    <md-button ui-sref="app.home" class="md-raised">home</md-button>
+    <md-button ng-click="login.getCurrentUser()" class="md-raised">current user</md-button>
+  </div>
 </section>

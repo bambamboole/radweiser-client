@@ -9,6 +9,10 @@ module.exports = (gulp, plugins) ->
     'bower_components/angular-material/angular-material.js'
     'bower_components/angular-aria/angular-aria.js'
     'bower_components/ngstorage/ngStorage.js'
+    'bower_components/angular-sanitize/angular-sanitize.js'
+    'bower_components/angular-resource/angular-resource.js'
+    'bower_components/angular-mailchimp/angular-mailchimp.js'
+    'bower_components/v-accordion/dist/v-accordion.js'
   ]
 
   ->

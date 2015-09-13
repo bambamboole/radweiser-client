@@ -1,9 +1,57 @@
 {
+  "footer":{
+    "copyright": "radweiser.de | All Rights reserved"
+  },
   "menu": {
     "home": "Home",
     "faq": "FAQ",
     "blog": "Blog",
     "legal": "Impressum",
-    "login": "Login"
+    "login": "Login",
+    "contact": "Kontakt"
+  },
+  "newsletter": {
+    "button": "Für Newsletter anmelden",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "Emailadresse",
+    "subscribeButton": "Los!"
+  },
+  "home": {
+    "soonOnline": "Wir gehen bald online!",
+    "cardOne": {
+      "imagePath": "http://placehold.it/300x200",
+      "title": "Titel 1",
+      "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero",
+      "button": "more"
+    },
+    "cardTwo": {
+      "imagePath": "http://placehold.it/300x200",
+      "title": "Titel 2",
+      "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero",
+      "button": "more"
+    },
+    "cardThree": {
+      "imagePath": "http://placehold.it/300x200",
+      "title": "Titel 3",
+      "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero",
+      "button": "more"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "form": {
+      "name": "Name",
+      "email": "Emailadresse",
+      "company":{
+        "name": "Firmenname",
+        "phone": "Telefon geschäftlich",
+        "address": "Straße",
+        "zip": "Postleitzahl",
+        "city": "Stadt",
+        "button": "optionale Angaben für Händler"
+      },
+      "message": "Nachricht"
+    }
   }
 }

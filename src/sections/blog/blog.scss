@@ -1,3 +1,9 @@
-section.blog{
-
+section.blog {
+  width: 100%;
+  background: $first-color;
+  color: white;
+  .blog-list{
+    background: #F6EFE8;
+    color: $first-color;
+  }
 }

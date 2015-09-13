@@ -1,48 +1,233 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 @import "../bower_components/angular-material/angular-material.scss";
 @import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
 
-$first-color: #2ac211;
+$first-color: #4CAF50;
+$breakpoint-desktop: 1200px;
 
 @import "navigation/navigation";
 @import "sections/blog/blog";
 @import "sections/faq/faq";
 @import "sections/home/home";
+@import "sections/contact/contact";
+@import "sections/login/login";
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 400;
-  min-height: 2000px;
+  height: 100%;
+
 }
 
-button, a, input, select, i{
-  outline: none!important;
+button, a, input, select, i, p {
+  outline: none !important;
 }
 
 h1 {
-  color: $first-color;
+  color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
   text-align: center;
   font-size: 3em;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
 
-div.header {
-  @include linear-gradient(#4ea642, #2ac211);
+div.background {
+  width: 100%;
+  height: 100%;
+  background: #3c3c3c url("../images/tweed.png");
+}
 
-  div.logo-wrapper {
-    padding: 5% 0 5% 0;
-    img.logo {
-      display: block;
-      margin: auto;
-      max-width: 50%;
-    }
+div.content {
+  width: 100%;
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 1200px;
+    margin: 0 auto;
   }
+}
 
+div.header {
+  background: #fff url("../images/header.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  height: 600px;
+  h1{
+    position:absolute;
+    bottom: 0;
+    width: 90%;
+  }
 }
 
 div.footer {
+  width: 100%;
   background: $first-color;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  p {
+    margin: auto;
+  }
 }
 
+.HiddenCheckbox {
+  display: none;
+}
+
+.MenuIcon {
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 30px;
+  position: relative;
+  width: 30px;
+  z-index: 2;
+}
+
+.MenuIcon::before {
+  -webkit-box-shadow: #999999 0 12px 0;
+  box-shadow: #999999 0 12px 0;
+  height: 6px;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  width: 30px;
+}
+
+.MenuIcon::after {
+  bottom: 0;
+  height: 6px;
+  -webkit-transform-origin: left bottom;
+  -ms-transform-origin: left bottom;
+  transform-origin: left bottom;
+  width: 30px;
+}
+
+.MenuIcon::before,
+.MenuIcon::after {
+  background: $first-color;
+  display: block;
+  content: '';
+  position: absolute;
+  -webkit-transition: -webkit-box-shadow 0.2s linear, -webkit-transform 0.4s 0.2s;
+  transition: box-shadow 0.2s linear, transform 0.4s 0.2s;
+}
+
+.HiddenCheckbox:checked ~ .MenuHeader {
+  opacity: 1;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.HiddenCheckbox:checked ~ .MenuIcon::before {
+  -webkit-box-shadow: transparent 0 0 0;
+  box-shadow: transparent 0 0 0;
+  -webkit-transform: rotate(45deg) translate3d(6px, -3px, 0);
+  transform: rotate(45deg) translate3d(6px, -3px, 0);
+}
+
+.HiddenCheckbox:checked ~ .MenuIcon::after {
+  -webkit-transform: rotate(-45deg) translate3d(6px, 3px, 0);
+  transform: rotate(-45deg) translate3d(6px, 3px, 0);
+}
+
+.HiddenCheckbox:checked ~ .Menu {
+  left: 0;
+}
+
+.MenuContainer {
+  display: inline-block;
+  margin: 30px 0 0 30px;
+}
+
+.Menu {
+
+  bottom: 0;
+  left: -100%;
+  position: absolute;
+  top: 30px;
+  width: 25%;
+  min-height: 100%;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s;
+  @media screen and (max-width: $breakpoint-desktop) {
+    background: #3c3c3c url("../images/tweed.png");
+  }
+}
+
+
+.Menu-list {
+  list-style-type: none;
+  margin: 100px 0 0 0;
+  padding: 0;
+}
+
+.Menu-item {
+  margin: 0;
+  font-weight: bold;
+}
+
+.Menu-link {
+  color: $first-color;
+  display: block;
+  overflow: hidden;
+  padding: 8px 22px;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.Menu-link::before {
+  background: #3c3c3c url("../images/tweed.png");
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  -webkit-transition: right 0.4s;
+  transition: right 0.4s;
+  z-index: -1;
+}
+
+.Menu-link::after {
+  content: attr(data-subtitle);
+  color: #fff;
+  float: right;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s, -webkit-transform 0.4s;
+  transition: opacity 0.8s, transform 0.4s;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+.Menu-link:hover::before {
+  right: 0;
+}
+
+.Menu-link:hover::after {
+  opacity: 0.5;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.newsletter-btn {
+  padding: 10px 15px;
+  margin: 0 15px 13px 8px;
+  min-width: 88px;
+  border-radius: 3px;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  float: right;
+}
+
+#newsletter-container p{
+  font-size: 1.4em;
+  margin: 50px 0 0 0;
+}
