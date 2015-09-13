@@ -16,6 +16,10 @@ body {
   min-height: 2000px;
 }
 
+button, a, input, select, i{
+  outline: none!important;
+}
+
 h1 {
   color: $first-color;
   text-align: center;

@@ -20,6 +20,10 @@ angular.module 'app',
   .state 'app',
     abstract: true
     templateUrl: 'layout.html'
+    onEnter: (auth) ->
+       if auth.userHasValidToken()
+         auth.startRefreshTokenInterval() if not auth.refreshInterval
+         auth.refreshToken()
 
   $translateProvider
     .registerAvailableLanguageKeys ['de', 'en'], languageKeys
@@ -43,3 +47,5 @@ angular.module 'app',
 
 
 .constant 'API', 'http://localhost:2342/api'
+
+

@@ -1,7 +1,7 @@
 <section class="login">
 
   <h1>{{ login.title }}</h1>
-<form ng-submit="login.submit()">
+<form ng-hide="login.isLoggedIn" ng-submit="login.submit()">
   <md-input-container>
     <label>username</label>
     <input ng-model="login.username">
@@ -13,6 +13,9 @@
   <md-button type="submit" class="md-raised">Button</md-button>
 </form>
   <md-button ng-click="login.getUsers()" class="md-raised">users</md-button>
+
   <md-button ng-click="login.logout()" class="md-raised">logout</md-button>
+  <md-button ui-sref="app.home" class="md-raised">home</md-button>
+
 
 </section>

@@ -10,11 +10,15 @@ angular.module 'app.login', []
     templateUrl: 'sections/login/login.html'
 
 
-.controller 'LoginController', ($http, auth) ->
+.controller 'LoginController', ($scope, $http, auth) ->
   @title = 'login'
+
+  console.log auth
+  @isLoggedIn = auth.isLoggedIn()
 
   @username = 'manu'
   @password = 'password'
+
   @submit = ->
     credentials =
       name: @username
@@ -27,5 +31,13 @@ angular.module 'app.login', []
     .then (response) ->
       console.log response.data
 
-  @logout = auth.logout
+  @logout = ->
+    auth.logout()
+
+  $scope.$watch ->
+    auth.isLoggedIn()
+  , (newVal, oldVal) =>
+    console.log newVal, oldVal
+    @isLoggedIn = newVal
+
   return @
